@@ -1,0 +1,30 @@
+{
+    "name": "digbang/doctrine-extensions",
+    "description": "Doctrine extensions for PostgreSQL",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Guido Contreras Woda",
+            "email": "gcontreras@digbang.com"
+        }
+    ],
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "^6.2",
+        "doctrine/orm": "^2.5",
+        "mockery/mockery": "^0.9.9",
+        "laravel-doctrine/orm": "^1.3",
+        "laravel-doctrine/fluent": "^1.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Digbang\\DoctrineExtensions\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Digbang\\DoctrineExtensions\\": "tests/"
+        }
+    }
+}
