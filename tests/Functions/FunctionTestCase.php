@@ -4,7 +4,6 @@ declare(strict_types=1);
 namespace Digbang\DoctrineExtensions\Functions;
 
 use Digbang\DoctrineExtensions\DoctrineIntegrationTestCase;
-use Digbang\DoctrineExtensions\stubs\Person;
 use Doctrine\ORM\Configuration;
 
 abstract class FunctionTestCase extends DoctrineIntegrationTestCase

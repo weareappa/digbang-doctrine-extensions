@@ -24,4 +24,9 @@ class Person
      * @var int
      */
     private $fingers;
+
+    /**
+     * @var array
+     */
+    private $lotteryNumbers;
 }

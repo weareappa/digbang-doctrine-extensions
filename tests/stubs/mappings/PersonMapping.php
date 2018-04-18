@@ -30,5 +30,6 @@ class PersonMapping extends EntityMapping
         $builder->string('name');
         $builder->integer('age');
         $builder->integer('fingers')->default('10');
+        $builder->jsonArray('lotteryNumbers');
     }
 }
