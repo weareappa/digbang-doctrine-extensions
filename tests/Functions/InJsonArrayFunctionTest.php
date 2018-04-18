@@ -20,7 +20,7 @@ class InJsonArrayFunctionTest extends FunctionTestCase
 
     protected function getSQL(): string
     {
-        return 'SELECT p0_.id AS id_0 FROM Person p0_ WHERE p0_.lotteryNumbers ?| ARRAY[\'?\'] = 1';
+        return 'SELECT p0_.id AS id_0 FROM Person p0_ WHERE (p0_.lotteryNumbers)::jsonb @> array_to_json(ARRAY[?])::jsonb = 1';
     }
 
     public function test_dql_to_sql_comparison()

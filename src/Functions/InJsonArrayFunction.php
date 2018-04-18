@@ -24,7 +24,7 @@ class InJsonArrayFunction extends FunctionNode
      */
     public function getSql(SqlWalker $sqlWalker)
     {
-        return $this->field->dispatch($sqlWalker) . ' ?| ARRAY[' . $this->parseSearchItems($this->search->dispatch($sqlWalker)) . ']';
+        return "({$this->field->dispatch($sqlWalker)})::jsonb @> array_to_json(ARRAY[{$this->search->dispatch($sqlWalker)}])::jsonb";
     }
 
     /**
@@ -44,14 +44,5 @@ class InJsonArrayFunction extends FunctionNode
         $this->search = $parser->StringPrimary();
 
         $parser->match(Lexer::T_CLOSE_PARENTHESIS);
-    }
-
-    private function parseSearchItems($items)
-    {
-        $items = (array) $items;
-
-        return implode(',', array_map(function(string $item) {
-            return "'$item'";
-        }, $items));
     }
 }
