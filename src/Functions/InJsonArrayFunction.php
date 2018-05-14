@@ -9,7 +9,7 @@ use Doctrine\ORM\Query\SqlWalker;
 
 class InJsonArrayFunction extends FunctionNode
 {
-    const IN_JSON_ARRAY = 'IN_JSON_ARRAY';
+    const IDENTIFIER = 'IN_JSON_ARRAY';
 
     /** @var Node */
     private $field;

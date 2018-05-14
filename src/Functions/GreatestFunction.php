@@ -9,7 +9,7 @@ use Doctrine\ORM\Query\SqlWalker;
 
 class GreatestFunction extends FunctionNode
 {
-    const GREATEST = 'GREATEST';
+    const IDENTIFIER = 'GREATEST';
 
     /** @var Node[] */
     private $expressions = [];

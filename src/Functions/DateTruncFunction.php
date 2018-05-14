@@ -2,13 +2,14 @@
 namespace Digbang\DoctrineExtensions\Functions;
 
 use Doctrine\ORM\Query\AST\Functions\FunctionNode;
-use Doctrine\ORM\Query\AST\Node;
 use Doctrine\ORM\Query\Lexer;
 use Doctrine\ORM\Query\Parser;
 use Doctrine\ORM\Query\SqlWalker;
 
 class DateTruncFunction extends FunctionNode
 {
+    public const IDENTIFIER = 'DATE_TRUNC';
+
     private $date;
     private $precision;
 

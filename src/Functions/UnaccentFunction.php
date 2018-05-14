@@ -9,7 +9,7 @@ use Doctrine\ORM\Query\SqlWalker;
 
 class UnaccentFunction extends FunctionNode
 {
-    const UNACCENT = 'UNACCENT';
+    public const IDENTIFIER = 'UNACCENT';
 
     /** @var Node */
     private $string;

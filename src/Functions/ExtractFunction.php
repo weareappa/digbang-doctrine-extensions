@@ -8,6 +8,8 @@ use Doctrine\ORM\Query\SqlWalker;
 
 class ExtractFunction extends FunctionNode
 {
+    public const IDENTIFIER = 'EXTRACT';
+
     private $date;
     private $subfield;
 
