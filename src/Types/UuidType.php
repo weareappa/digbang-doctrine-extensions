@@ -95,7 +95,7 @@ class UuidType extends Type
      */
     public function getName()
     {
-        return self::NAME;
+        return self::UUID;
     }
 
     /**
