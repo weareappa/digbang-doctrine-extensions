@@ -25,10 +25,12 @@ class DoctrineExtensionsServiceProvider extends ServiceProvider
 
     private function registerTypes()
     {
-        (new CustomTypeManager())->addCustomTypes([
+        $typeManager = new CustomTypeManager();
+        $typeManager->addCustomTypes([
             Types\ChronosDateType::CHRONOS_DATE => Types\ChronosDateType::class,
             Types\ChronosDateTimeType::CHRONOS_DATETIME => Types\ChronosDateTimeType::class,
             Types\ChronosDateTimeTzType::CHRONOS_DATETIMETZ => Types\ChronosDateTimeTzType::class,
+            Types\UuidType::UUID => Types\UuidType::class
         ]);
     }
 
