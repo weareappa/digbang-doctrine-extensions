@@ -63,8 +63,9 @@ class DoctrineExtensionsServiceProvider extends ServiceProvider
             ]);
 
             $configuration->setCustomStringFunctions([
-                Functions\UnaccentFunction::IDENTIFIER => Functions\UnaccentFunction::class,
                 Functions\InJsonArrayFunction::IDENTIFIER => Functions\InJsonArrayFunction::class,
+                Functions\UnaccentFunction::IDENTIFIER => Functions\UnaccentFunction::class,
+                Functions\FilterWhereFunction::IDENTIFIER => Functions\FilterWhereFunction::class,
             ]);
         });
     }
