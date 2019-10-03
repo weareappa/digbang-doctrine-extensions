@@ -60,6 +60,7 @@ class DoctrineExtensionsServiceProvider extends ServiceProvider
             $configuration->setCustomNumericFunctions([
                 Functions\GreatestFunction::IDENTIFIER => Functions\GreatestFunction::class,
                 Functions\NumericCastFunction::IDENTIFIER => Functions\NumericCastFunction::class,
+                Functions\EarthDistanceFunction::IDENTIFIER => Functions\EarthDistanceFunction::class,
             ]);
 
             $configuration->setCustomStringFunctions([
