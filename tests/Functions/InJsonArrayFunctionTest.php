@@ -10,7 +10,7 @@ class InJsonArrayFunctionTest extends FunctionTestCase
 {
     protected function setUpFunction(Configuration $configuration): void
     {
-        $configuration->addCustomStringFunction(InJsonArrayFunction::IN_JSON_ARRAY, InJsonArrayFunction::class);
+        $configuration->addCustomStringFunction(InJsonArrayFunction::IDENTIFIER, InJsonArrayFunction::class);
     }
 
     protected function getDQL(): string

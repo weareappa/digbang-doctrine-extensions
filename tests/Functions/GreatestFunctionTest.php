@@ -10,7 +10,7 @@ class GreatestFunctionTest extends FunctionTestCase
 {
     protected function setUpFunction(Configuration $configuration): void
     {
-        $configuration->addCustomStringFunction(GreatestFunction::GREATEST, GreatestFunction::class);
+        $configuration->addCustomStringFunction(GreatestFunction::IDENTIFIER, GreatestFunction::class);
     }
 
     protected function getDQL(): string
