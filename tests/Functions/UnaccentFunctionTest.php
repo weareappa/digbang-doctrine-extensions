@@ -10,7 +10,7 @@ class UnaccentFunctionTest extends FunctionTestCase
 {
     protected function setUpFunction(Configuration $config): void
     {
-        $config->addCustomStringFunction(UnaccentFunction::UNACCENT, UnaccentFunction::class);
+        $config->addCustomStringFunction(UnaccentFunction::IDENTIFIER, UnaccentFunction::class);
     }
     protected function getDQL(): string
     {
