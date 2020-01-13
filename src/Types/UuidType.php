@@ -63,7 +63,7 @@ class UuidType extends Type
         try {
             $uuid = Uuid::fromString($value);
         } catch (InvalidArgumentException $e) {
-            throw ConversionException::conversionFailed($value, self::NAME);
+            throw ConversionException::conversionFailed($value, self::UUID);
         }
 
         return $uuid;
@@ -85,7 +85,7 @@ class UuidType extends Type
             return (string) $value;
         }
 
-        throw ConversionException::conversionFailed($value, self::NAME);
+        throw ConversionException::conversionFailed($value, self::UUID);
     }
 
     /**
