@@ -20,7 +20,7 @@ abstract class DoctrineIntegrationTestCase extends TestCase
     /**
      * @return EntityManager
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $configuration = $this->metadataConfiguration();
 
