@@ -14,7 +14,7 @@ abstract class FunctionTestCase extends DoctrineIntegrationTestCase
 
     abstract protected function getSQL(): string;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 
