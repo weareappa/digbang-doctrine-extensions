@@ -1,5 +1,5 @@
 <?php
-namespace Digbang\DoctrineExtensions\Functions;
+namespace Digbang\DoctrineExtensions\Functions\Postgresql;
 
 use Doctrine\ORM\Query\AST\Functions\FunctionNode;
 use Doctrine\ORM\Query\AST\PathExpression;

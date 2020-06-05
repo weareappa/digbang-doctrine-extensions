@@ -1,33 +1,33 @@
 <?php
-namespace Digbang\DoctrineExtensions\Functions;
+namespace Digbang\DoctrineExtensions\Functions\Postgresql;
 
 use Doctrine\ORM\Query\AST\Functions\FunctionNode;
 use Doctrine\ORM\Query\Lexer;
 use Doctrine\ORM\Query\Parser;
 use Doctrine\ORM\Query\SqlWalker;
 
-class ExtractFunction extends FunctionNode
+class FilterWhereFunction extends FunctionNode
 {
-    public const IDENTIFIER = 'EXTRACT';
+    public const IDENTIFIER = 'FILTER_WHERE';
 
-    private $date;
-    private $subfield;
+    private $expresion;
+    private $condition;
 
     public function getSql(SqlWalker $sqlWalker)
     {
         return sprintf(
-            'extract(%s from %s)',
-            $sqlWalker->walkStringPrimary($this->subfield),
-            $sqlWalker->walkArithmeticPrimary($this->date));
+            '%s FILTER (WHERE %s)',
+            $sqlWalker->walkStringPrimary($this->expresion),
+            $sqlWalker->walkStringPrimary($this->condition));
     }
 
     public function parse(Parser $parser)
     {
         $parser->match(Lexer::T_IDENTIFIER);
         $parser->match(Lexer::T_OPEN_PARENTHESIS);
-        $this->subfield = $parser->StringExpression();
+        $this->expresion = $parser->AggregateExpression();
         $parser->match(Lexer::T_COMMA);
-        $this->date = $parser->ArithmeticExpression();
+        $this->condition = $parser->ConditionalExpression();
         $parser->match(Lexer::T_CLOSE_PARENTHESIS);
     }
 }
