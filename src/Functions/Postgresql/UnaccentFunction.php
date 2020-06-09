@@ -1,5 +1,5 @@
 <?php
-namespace Digbang\DoctrineExtensions\Functions;
+namespace Digbang\DoctrineExtensions\Functions\Postgresql;
 
 use Doctrine\ORM\Query\AST\Functions\FunctionNode;
 use Doctrine\ORM\Query\AST\Node;
@@ -7,15 +7,12 @@ use Doctrine\ORM\Query\Lexer;
 use Doctrine\ORM\Query\Parser;
 use Doctrine\ORM\Query\SqlWalker;
 
-class InJsonArrayFunction extends FunctionNode
+class UnaccentFunction extends FunctionNode
 {
-    const IDENTIFIER = 'IN_JSON_ARRAY';
+    public const IDENTIFIER = 'UNACCENT';
 
     /** @var Node */
-    private $field;
-
-    /** @var Node */
-    private $search;
+    private $string;
 
     /**
      * @param SqlWalker $sqlWalker
@@ -24,7 +21,7 @@ class InJsonArrayFunction extends FunctionNode
      */
     public function getSql(SqlWalker $sqlWalker)
     {
-        return "({$this->field->dispatch($sqlWalker)})::jsonb @> array_to_json(ARRAY[{$this->search->dispatch($sqlWalker)}])::jsonb";
+        return 'unaccent(' . $this->string->dispatch($sqlWalker) . ')';
     }
 
     /**
@@ -36,13 +33,7 @@ class InJsonArrayFunction extends FunctionNode
     {
         $parser->match(Lexer::T_IDENTIFIER);
         $parser->match(Lexer::T_OPEN_PARENTHESIS);
-
-        $this->field = $parser->StringPrimary();
-
-        $parser->match(Lexer::T_COMMA);
-
-        $this->search = $parser->StringPrimary();
-
+        $this->string = $parser->StringExpression();
         $parser->match(Lexer::T_CLOSE_PARENTHESIS);
     }
 }
