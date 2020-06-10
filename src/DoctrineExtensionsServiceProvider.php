@@ -86,10 +86,11 @@ class DoctrineExtensionsServiceProvider extends ServiceProvider
 
             $configuration->setCustomStringFunctions([
                 Functions\Postgresql\ArrayAggFunction::IDENTIFIER => Functions\Postgresql\ArrayAggFunction::class,
+                Functions\Postgresql\DateTruncFunction::IDENTIFIER => Functions\Postgresql\DateTruncFunction::class,
+                Functions\Postgresql\DistinctOnFunction::IDENTIFIER => Functions\Postgresql\DistinctOnFunction::class,
+                Functions\Postgresql\FilterWhereFunction::IDENTIFIER => Functions\Postgresql\FilterWhereFunction::class,
                 Functions\Postgresql\InJsonArrayFunction::IDENTIFIER => Functions\Postgresql\InJsonArrayFunction::class,
                 Functions\Postgresql\UnaccentFunction::IDENTIFIER => Functions\Postgresql\UnaccentFunction::class,
-                Functions\Postgresql\FilterWhereFunction::IDENTIFIER => Functions\Postgresql\FilterWhereFunction::class,
-                Functions\Postgresql\DateTruncFunction::IDENTIFIER => Functions\Postgresql\DateTruncFunction::class,
 
                 'AT_TIME_ZONE' => BeberleiFunctions\Postgresql\AtTimeZoneFunction::class,
                 'DATE_FORMAT' => BeberleiFunctions\Postgresql\DateFormat::class,
