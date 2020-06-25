@@ -10,11 +10,11 @@ use Doctrine\ORM\Query\SqlWalker;
 /**
  * Class DecimalCastFunction
  *
- * @example DECIMAL($expression, $precision)
+ * @example MONEY_TO_DECIMAL($expression, $precision)
  */
-class DecimalCastFunction extends FunctionNode
+class MoneyToDecimalFunction extends FunctionNode
 {
-    public const IDENTIFIER = 'DECIMAL';
+    public const IDENTIFIER = 'MONEY_TO_DECIMAL';
 
     private $field;
     private $precision;
@@ -39,7 +39,7 @@ class DecimalCastFunction extends FunctionNode
     {
         $field = $this->field->dispatch($sqlWalker);
         $precision = $this->precision->dispatch($sqlWalker);
-        $dividend = (int)str_pad('1', $precision + 1, '0', STR_PAD_RIGHT);
+        $dividend = (int) str_pad('1', $precision + 1, '0', STR_PAD_RIGHT);
 
         return "(($field)::NUMERIC / $dividend)::NUMERIC(10, $precision)";
     }
