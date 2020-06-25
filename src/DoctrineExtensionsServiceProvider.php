@@ -76,8 +76,9 @@ class DoctrineExtensionsServiceProvider extends ServiceProvider
             ]);
 
             $configuration->setCustomNumericFunctions([
-                Functions\Postgresql\NumericCastFunction::IDENTIFIER => Functions\Postgresql\NumericCastFunction::class,
                 Functions\Postgresql\EarthDistanceFunction::IDENTIFIER => Functions\Postgresql\EarthDistanceFunction::class,
+                Functions\Postgresql\MoneyToDecimalFunction::IDENTIFIER => Functions\Postgresql\MoneyToDecimalFunction::class,
+                Functions\Postgresql\NumericCastFunction::IDENTIFIER => Functions\Postgresql\NumericCastFunction::class,
 
                 'COUNT_FILTER' => BeberleiFunctions\Postgresql\CountFilterFunction::class,
                 'GREATEST' => BeberleiFunctions\Postgresql\Greatest::class,
@@ -90,6 +91,7 @@ class DoctrineExtensionsServiceProvider extends ServiceProvider
                 Functions\Postgresql\DistinctOnFunction::IDENTIFIER => Functions\Postgresql\DistinctOnFunction::class,
                 Functions\Postgresql\FilterWhereFunction::IDENTIFIER => Functions\Postgresql\FilterWhereFunction::class,
                 Functions\Postgresql\InJsonArrayFunction::IDENTIFIER => Functions\Postgresql\InJsonArrayFunction::class,
+                Functions\Postgresql\LPadFunction::IDENTIFIER => Functions\Postgresql\LPadFunction::class,
                 Functions\Postgresql\UnaccentFunction::IDENTIFIER => Functions\Postgresql\UnaccentFunction::class,
 
                 'AT_TIME_ZONE' => BeberleiFunctions\Postgresql\AtTimeZoneFunction::class,
