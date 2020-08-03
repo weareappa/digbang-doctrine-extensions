@@ -93,6 +93,7 @@ class DoctrineExtensionsServiceProvider extends ServiceProvider
                 Functions\Postgresql\InJsonArrayFunction::IDENTIFIER => Functions\Postgresql\InJsonArrayFunction::class,
                 Functions\Postgresql\LPadFunction::IDENTIFIER => Functions\Postgresql\LPadFunction::class,
                 Functions\Postgresql\UnaccentFunction::IDENTIFIER => Functions\Postgresql\UnaccentFunction::class,
+                Functions\Postgresql\TypeFunction::IDENTIFIER => Functions\Postgresql\TypeFunction::class,
 
                 'AT_TIME_ZONE' => BeberleiFunctions\Postgresql\AtTimeZoneFunction::class,
                 'DATE_FORMAT' => BeberleiFunctions\Postgresql\DateFormat::class,
