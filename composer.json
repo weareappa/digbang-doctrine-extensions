@@ -1,5 +1,5 @@
 {
-    "name": "digbang/doctrine-extensions",
+    "name": "weareappa/digbang-doctrine-extensions",
     "description": "Doctrine extensions for PostgreSQL",
     "type": "library",
     "license": "MIT",
